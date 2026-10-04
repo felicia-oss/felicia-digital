@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hynuraa Digital</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    color:white;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.88)
+    ),
+    url("hokage.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:520px;
+    margin:auto;
+    padding:20px 0 50px;
+}
+
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:12px;
+    z-index:100;
+
+    display:flex;
+    justify-content:center;
+    gap:4px;
+
+    padding:9px;
+
+    margin-bottom:55px;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,.60);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+}
+
+nav a{
+    color:#ccc;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    padding:8px 9px;
+
+    border-radius:10px;
+}
+
+nav a:hover{
+    color:white;
+    background:rgba(255,255,255,.10);
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+}
+
+.logo{
+    width:100px;
+    height:100px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:36px;
+    font-weight:bold;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 50px rgba(255,255,255,.15);
+}
+
+.hero h1{
+    margin-top:25px;
+
+    font-size:36px;
+
+    letter-spacing:1px;
+}
+
+.subtitle{
+    margin-top:12px;
+
+    color:#ccc;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.badge{
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:8px 17px;
+
+    border-radius:30px;
+
+    color:#ddd;
+
+    font-size:12px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+}
+
+
+/* STATS */
+
+.stats{
+    display:flex;
+
+    gap:10px;
+
+    margin-top:35px;
+}
+
+.stat{
+    flex:1;
+
+    text-align:center;
+
+    padding:18px 8px;
+
+    border-radius:18px;
+
+    background:rgba(0,0,0,.50);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+}
+
+.stat strong{
+    display:block;
+
+    font-size:20px;
+}
+
+.stat span{
+    display:block;
+
+    margin-top:5px;
+
+    color:#999;
+
+    font-size:11px;
+}
+
+
+/* CARD */
+
+.card{
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(10,10,10,.60);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.35);
+}
+
+.card h2{
+    font-size:20px;
+
+    margin-bottom:15px;
+}
+
+.card > p{
+    color:#ccc;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* SERVICE */
+
+.service{
+    padding:17px;
+
+    margin-top:12px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.service h3{
+    font-size:15px;
+
+    margin-bottom:7px;
+}
+
+.service p{
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+/* PROJECT */
+
+.project{
+    padding:18px;
+
+    margin-top:12px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.09);
+}
+
+.project h3{
+    font-size:15px;
+
+    margin-bottom:7px;
+}
+
+.project p{
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+/* PRICE */
+
+.price{
+    text-align:center;
+
+    margin-top:12px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+}
+
+.price h3{
+    font-size:16px;
+}
+
+.price .number{
+    margin-top:10px;
+
+    font-size:27px;
+
+    font-weight:bold;
+}
+
+.price p{
+    margin-top:8px;
+
+    color:#999;
+
+    font-size:12px;
+}
+
+
+/* BUTTON */
+
+.button{
+    display:block;
+
+    margin-top:22px;
+
+    padding:16px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:black;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,.20);
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    margin-top:45px;
+
+    color:#777;
+
+    font-size:12px;
+}
+
+
+/* ANIMATION */
+
+.fade{
+    animation:fadein 1.2s ease;
+}
+
+@keyframes fadein{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container fade">
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#tentang">Tentang</a>
+
+<a href="#layanan">Layanan</a>
+
+<a href="#project">Project</a>
+
+<a href="#kontak">Kontak</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="logo">
+H
+</div>
+
+<h1>
+Hynuraa Digital
+</h1>
+
+<p class="subtitle">
+
+Eksperimen digital dari perangkat
+<br>
+yang selalu ada di tangan.
+
+</p>
+
+<div class="badge">
+✦ DIGITAL CREATOR
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+
+<strong>∞</strong>
+
+<span>
+Ide
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>24/7</strong>
+
+<span>
+Belajar
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>1</strong>
+
+<span>
+HP
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="card" id="tentang">
+
+<h2>
+👋 Tentang Saya
+</h2>
+
+<p>
+
+Saya sedang belajar dan bereksperimen
+di dunia digital menggunakan perangkat
+mobile.
+
+Saya percaya keterbatasan perangkat
+bukan alasan untuk berhenti mencoba
+hal baru.
+
+</p>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="card" id="layanan">
+
+<h2>
+🚀 Layanan
+</h2>
+
+
+<div class="service">
+
+<h3>
+💻 Website
+</h3>
+
+<p>
+Website sederhana untuk personal branding
+dan usaha kecil.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+📱 Landing Page
+</h3>
+
+<p>
+Halaman promosi ringan dan nyaman
+dibuka melalui smartphone.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+⚙️ Automasi
+</h3>
+
+<p>
+Script sederhana untuk membantu pekerjaan
+dan eksperimen digital.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROJECT -->
+
+<section class="card" id="project">
+
+<h2>
+🔥 Project
+</h2>
+
+
+<div class="project">
+
+<h3>
+🌐 Hynuraa Web
+</h3>
+
+<p>
+Website portfolio yang dibuat langsung
+dari Android menggunakan Termux.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>
+🤖 Python Experiment
+</h3>
+
+<p>
+Eksperimen Python dan automasi
+menggunakan perangkat mobile.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>
+🎨 Digital Experiment
+</h3>
+
+<p>
+Eksplorasi berbagai teknologi digital
+tanpa menggunakan komputer.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PRICE -->
+
+<section class="card">
+
+<h2>
+💰 Paket Website
+</h2>
+
+
+<div class="price">
+
+<h3>
+Basic
+</h3>
+
+<div class="number">
+Rp50K
+</div>
+
+<p>
+1 halaman website sederhana
+</p>
+
+</div>
+
+
+<div class="price">
+
+<h3>
+Standard
+</h3>
+
+<div class="number">
+Rp100K
+</div>
+
+<p>
+Website + katalog + kontak
+</p>
+
+</div>
+
+
+<div class="price">
+
+<h3>
+Custom
+</h3>
+
+<div class="number">
+Diskusi
+</div>
+
+<p>
+Sesuaikan dengan kebutuhan
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="card" id="kontak">
+
+<h2>
+📩 Mari Terhubung
+</h2>
+
+<p>
+
+Punya ide atau project sederhana?
+Mari ngobrol dan lihat apa yang
+bisa kita buat bersama.
+
+</p>
+
+
+<a
+class="button"
+href="https://wa.me/6281229367990">
+
+💬 Hubungi Saya via WhatsApp
+
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 Hynuraa Digital
+
+<br><br>
+
+Built with Android + Termux
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
